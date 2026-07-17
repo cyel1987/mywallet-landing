@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy — Tally</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
+  :root{
+    --ink:#0F2A2C; --ink-deep:#0A1F20; --panel:#163A3C; --cream:#F2ECDD;
+    --gold:#E8B45C; --muted:#7FA3A0; --line:rgba(242,236,221,0.12);
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; font-family:'Inter',sans-serif; background:var(--ink); color:var(--cream); -webkit-font-smoothing:antialiased; }
+  a{ color:var(--gold); }
+  nav.topnav{ position:sticky; top:0; z-index:50; background:rgba(15,42,44,0.9); backdrop-filter:blur(8px); border-bottom:1px solid var(--line); }
+  .topnav-inner{ display:flex; align-items:center; justify-content:space-between; padding:16px 24px; max-width:760px; margin:0 auto; }
+  .brand{ font-family:'Fraunces',serif; font-weight:700; font-size:20px; text-decoration:none; color:var(--cream); }
+  .brand span{ color:var(--gold); }
+  .back-link{ font-family:'IBM Plex Mono',monospace; font-size:12.5px; text-decoration:none; color:var(--muted); }
+  .back-link:hover{ color:var(--gold); }
+  .doc{ max-width:760px; margin:0 auto; padding:56px 24px 100px; }
+  .eyebrow{ font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:0.16em; text-transform:uppercase; color:var(--gold); margin-bottom:14px; }
+  h1{ font-family:'Fraunces',serif; font-weight:700; font-size:clamp(30px,5vw,44px); margin:0 0 8px; }
+  .updated{ font-family:'IBM Plex Mono',monospace; font-size:12.5px; color:var(--muted); margin-bottom:40px; }
+  .callout{ background:var(--panel); border:1px solid var(--line); border-radius:10px; padding:18px 22px; font-size:14.5px; margin-bottom:44px; }
+  h2{ font-family:'Fraunces',serif; font-weight:600; font-size:22px; margin:44px 0 14px; }
+  p, li{ font-size:15px; line-height:1.75; color:var(--cream); }
+  ul{ padding-left:22px; }
+  li{ margin-bottom:6px; }
+  table{ width:100%; border-collapse:collapse; margin:16px 0 24px; font-size:14px; }
+  th, td{ text-align:left; padding:10px 12px; border-bottom:1px solid var(--line); }
+  th{ font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.08em; text-transform:uppercase; color:var(--muted); }
+  .footnote{ margin-top:56px; padding-top:24px; border-top:1px solid var(--line); font-size:13px; color:var(--muted); font-style:italic; }
+  footer{ border-top:1px solid var(--line); padding:28px 24px; text-align:center; }
+  footer p{ font-family:'IBM Plex Mono',monospace; font-size:12px; color:var(--muted); margin:0; }
+</style>
+</head>
+<body>
+
+<nav class="topnav">
+  <div class="topnav-inner">
+    <a class="brand" href="index.html">Tally<span>.</span></a>
+    <a class="back-link" href="index.html">← Back to home</a>
+  </div>
+</nav>
+
+<div class="doc">
+  <div class="eyebrow">Legal</div>
+  <h1>Privacy Policy</h1>
+  <div class="updated">Last updated: July 17, 2026</div>
+
+  <div class="callout">This Privacy Policy explains how Tally ("the Service", "we", "us") collects, uses, discloses, and protects your personal data, in accordance with Singapore's Personal Data Protection Act 2012 ("PDPA"). Tally is operated by an independent developer. Our Data Protection Officer can be reached at <a href="mailto:hello@tally.sg">hello@tally.sg</a>.</div>
+
+  <h2>1. What data we collect</h2>
+  <p>When you use Tally, we collect:</p>
+  <ul>
+    <li><strong>Account information</strong>: your email address and password (used only for authentication; we never see or store your password in readable form — it's handled by our authentication provider, Supabase, using industry-standard encryption).</li>
+    <li><strong>Financial data you enter</strong>: transactions, income, budgets, category names, and any notes you add. This may include merchant or person names you type in (e.g., for a PayNow transfer).</li>
+    <li><strong>Receipt and statement images, temporarily</strong>: if you use the receipt-scan or statement-import features, the photo or document you upload is sent to our AI provider (Anthropic, maker of Claude) to extract the transaction details. The image itself is not stored by us after this one-time read — only the extracted text data (merchant, amount, date, category) is saved to your account.</li>
+  </ul>
+  <p>We do <strong>not</strong> collect, request, or store:</p>
+  <ul>
+    <li>Your bank account login, password, or credentials, ever.</li>
+    <li>Any payment card numbers.</li>
+    <li>Your NRIC or other government ID numbers.</li>
+  </ul>
+
+  <h2>2. Why we collect it</h2>
+  <p>We collect this data solely to provide the Service's core function: letting you track, categorize, and understand your own personal expenses and income. We do not use your data for advertising, and we do not sell your data to any third party, ever.</p>
+
+  <h2>3. Who we share data with</h2>
+  <p>We use the following third-party service providers to operate Tally. Each processes data only as necessary to provide their specific function, and none are permitted to use your data for their own purposes:</p>
+  <table>
+    <tr><th>Provider</th><th>What they process</th><th>Purpose</th></tr>
+    <tr><td><strong>Supabase</strong></td><td>Your account and all financial data you enter</td><td>Database hosting and user authentication</td></tr>
+    <tr><td><strong>Anthropic (Claude)</strong></td><td>Receipt/statement images and text, at the moment you use AI features</td><td>Reading and categorizing your expenses</td></tr>
+    <tr><td><strong>Vercel</strong></td><td>General web traffic to load the app</td><td>Website hosting</td></tr>
+  </table>
+  <p>These providers may process data on servers located outside Singapore. By using the Service, you consent to this transfer, which is necessary to provide the Service to you.</p>
+
+  <h2>4. How your data is protected</h2>
+  <ul>
+    <li>Your data is protected using <strong>Row-Level Security</strong>, a database-level restriction that makes it technically impossible for one user's data to be read by another user's account — including by us, the operator of this Service, through normal use of the app.</li>
+    <li>All data is encrypted in transit (HTTPS/TLS).</li>
+    <li>We do not have a way to view your individual transactions, budgets, or income data by browsing the app ourselves — access would require directly querying the database with administrative credentials, which we do not do as a matter of course.</li>
+  </ul>
+
+  <h2>5. How long we keep your data</h2>
+  <p>We retain your data for as long as your account remains active. If you delete your account, your data is permanently removed from our database and cannot be recovered.</p>
+
+  <h2>6. Your rights</h2>
+  <p>Under the PDPA, you have the right to:</p>
+  <ul>
+    <li><strong>Access</strong> the personal data we hold about you.</li>
+    <li><strong>Correct</strong> any inaccurate data (you can do this directly within the app for almost everything).</li>
+    <li><strong>Withdraw consent</strong> for us to continue collecting, using, or disclosing your data, which in practice means deleting your account.</li>
+    <li><strong>Request deletion</strong> of your account and all associated data at any time.</li>
+  </ul>
+  <p>To exercise any of these rights, contact us at <a href="mailto:hello@tally.sg">hello@tally.sg</a>.</p>
+
+  <h2>7. Children's data</h2>
+  <p>Tally is not directed at or intended for use by children. If you are under 18, please only use this Service with the involvement of a parent or guardian.</p>
+
+  <h2>8. Changes to this Policy</h2>
+  <p>We may update this Policy from time to time. If we make material changes, we will make the updated Policy available on this page. Continued use of the Service after changes are posted constitutes acceptance of the revised Policy.</p>
+
+  <h2>9. Complaints</h2>
+  <p>If you have any concerns about how your personal data has been handled, please contact us first at <a href="mailto:hello@tally.sg">hello@tally.sg</a>. If you remain unsatisfied, you may lodge a complaint with Singapore's Personal Data Protection Commission (PDPC) at <a href="https://pdpc.gov.sg" target="_blank" rel="noopener">pdpc.gov.sg</a>.</p>
+
+  <div class="footnote">This document was written specifically for Tally's data practices as of July 17, 2026. It has not been reviewed by a lawyer.</div>
+</div>
+
+<footer><p>Tally — built for people who want to know, not guess.</p></footer>
+
+</body>
+</html>
