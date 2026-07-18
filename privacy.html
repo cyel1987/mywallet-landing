@@ -81,9 +81,10 @@
 
   <h2>4. How your data is protected</h2>
   <ul>
-    <li>Your data is protected using <strong>Row-Level Security</strong>, a database-level restriction that makes it technically impossible for one user's data to be read by another user's account — including by us, the operator of this Service, through normal use of the app.</li>
+    <li>The Service is <strong>designed so no user can see another's data</strong> — this is enforced by the database itself using <strong>Row-Level Security</strong>, not just a policy promise. Through the app, one user's account has no way to read another's transactions, notes, or attached photos.</li>
+    <li>We do not access, browse, or review individual users' data as a matter of normal operation.</li>
+    <li>That said, in the interest of full accuracy: as the operator of the underlying infrastructure (Supabase, which also stores any photos you attach in Notes), direct administrative access to the raw database and file storage is not technically impossible. Row-Level Security prevents cross-user access through the app itself, but it does not prevent the account owner from using their own administrative credentials to inspect stored data directly. We do not do this as a matter of course, and doing so is unnecessary for operating the Service.</li>
     <li>All data is encrypted in transit (HTTPS/TLS).</li>
-    <li>We do not have a way to view your individual transactions, budgets, or income data by browsing the app ourselves — access would require directly querying the database with administrative credentials, which we do not do as a matter of course.</li>
   </ul>
 
   <h2>5. How long we keep your data</h2>
