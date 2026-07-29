@@ -57,7 +57,7 @@
   <ul>
     <li><strong>Account information</strong>: your email address and password (used only for authentication; we never see or store your password in readable form — it's handled by our authentication provider, Supabase, using industry-standard encryption).</li>
     <li><strong>Financial data you enter</strong>: transactions, income, budgets, category names, and any notes you add. This may include merchant or person names you type in (e.g., for a PayNow transfer).</li>
-    <li><strong>Receipt and statement images, temporarily</strong>: if you use the receipt-scan or statement-import features, the photo or document you upload is sent to our AI provider (Anthropic, maker of Claude) to extract the transaction details. The image itself is not stored by us after this one-time read — only the extracted text data (merchant, amount, date, category) is saved to your account.</li>
+    <li><strong>Receipt and statement images, temporarily</strong>: if you use the receipt-scan or statement-import features, the photo or document you upload is sent to our AI provider to extract the transaction details. The image itself is not stored by us after this one-time read — only the extracted text data (merchant, amount, date, category) is saved to your account.</li>
   </ul>
   <p>We do <strong>not</strong> collect, request, or store:</p>
   <ul>
@@ -74,7 +74,7 @@
   <table>
     <tr><th>Provider</th><th>What they process</th><th>Purpose</th></tr>
     <tr><td><strong>Supabase</strong></td><td>Your account and all financial data you enter</td><td>Database hosting and user authentication</td></tr>
-    <tr><td><strong>Anthropic (Claude)</strong></td><td>Receipt/statement images and text, at the moment you use AI features</td><td>Reading and categorizing your expenses</td></tr>
+    <tr><td><strong>Our AI provider</strong></td><td>Receipt/statement images and text, at the moment you use AI features</td><td>Reading and categorizing your expenses</td></tr>
     <tr><td><strong>Vercel</strong></td><td>General web traffic to load the app</td><td>Website hosting</td></tr>
   </table>
   <p>These providers may process data on servers located outside Singapore. By using the Service, you consent to this transfer, which is necessary to provide the Service to you.</p>
