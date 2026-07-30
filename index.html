@@ -178,9 +178,41 @@
 <nav class="topnav">
   <div class="topnav-inner">
     <div class="brand">Tally<span>.</span></div>
-    <a class="btn btn-gold" href="https://mywallet-liart.vercel.app" target="_blank" rel="noopener">Try it free</a>
+    <div style="display:flex; gap:10px; align-items:center;">
+      <button class="btn" id="install-btn" style="background:none; border:1px solid rgba(242,236,221,0.2); color:var(--cream); cursor:pointer;" onclick="document.getElementById('install-modal').style.display='flex';">How to install</button>
+      <a class="btn btn-gold" href="https://app.letstally.app" target="_blank" rel="noopener">Try it free</a>
+    </div>
   </div>
 </nav>
+
+<div id="install-modal" style="display:none; position:fixed; inset:0; background:rgba(15,42,44,0.85); z-index:1000; align-items:center; justify-content:center; padding:20px;" onclick="if(event.target===this) this.style.display='none';">
+  <div style="background:var(--panel, #163A3C); border:1px solid rgba(242,236,221,0.15); border-radius:14px; padding:32px; max-width:640px; width:100%; max-height:85vh; overflow-y:auto; position:relative;">
+    <button onclick="document.getElementById('install-modal').style.display='none';" style="position:absolute; top:16px; right:16px; background:none; border:none; color:var(--muted); font-size:22px; cursor:pointer; line-height:1;">×</button>
+    <div class="section-eyebrow">Get it on your phone</div>
+    <h2 class="section-title" style="font-size:24px; margin-bottom:12px;">Add Tally to your home screen.</h2>
+    <p class="section-sub" style="margin-bottom:24px;">Tally works right in your browser — no app store needed. Add it to your home screen once, and it opens and feels just like any other app on your phone.</p>
+    <div style="display:grid; grid-template-columns:repeat(2,1fr); gap:20px;">
+      <div class="feature-card">
+        <h3 style="margin-bottom:18px;">📱 iPhone (Safari)</h3>
+        <ol style="margin:0; padding-left:20px; font-size:14.5px; line-height:1.9; color:var(--muted);">
+          <li>Open <strong style="color:var(--cream);">app.letstally.app</strong> in Safari</li>
+          <li>Tap the <strong style="color:var(--cream);">Share</strong> icon (the square with an arrow pointing up)</li>
+          <li>Scroll down and tap <strong style="color:var(--cream);">"Add to Home Screen"</strong></li>
+          <li>Tap <strong style="color:var(--cream);">"Add"</strong> in the top corner</li>
+        </ol>
+      </div>
+      <div class="feature-card">
+        <h3 style="margin-bottom:18px;">🤖 Android (Chrome)</h3>
+        <ol style="margin:0; padding-left:20px; font-size:14.5px; line-height:1.9; color:var(--muted);">
+          <li>Open <strong style="color:var(--cream);">app.letstally.app</strong> in Chrome</li>
+          <li>Tap the <strong style="color:var(--cream);">⋮</strong> menu (top right corner)</li>
+          <li>Tap <strong style="color:var(--cream);">"Add to Home screen"</strong> or <strong style="color:var(--cream);">"Install app"</strong></li>
+          <li>Confirm by tapping <strong style="color:var(--cream);">"Add"</strong> or <strong style="color:var(--cream);">"Install"</strong></li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</div>
 
 <section class="hero">
   <div class="hero-inner">
@@ -188,7 +220,7 @@
     <h1 class="hero-title">Your money.<br>Tracked by AI.<br><em>Seen by no one.</em></h1>
     <p class="hero-sub">Snap a receipt, drop a screenshot of your banking app, or import a statement — Tally turns it into a clean, categorized picture of your spending. Not your bank. Not even us.</p>
     <div class="hero-ctas">
-      <a class="btn btn-gold btn-lg" href="https://mywallet-liart.vercel.app" target="_blank" rel="noopener">Start tracking free →</a>
+      <a class="btn btn-gold btn-lg" href="https://app.letstally.app" target="_blank" rel="noopener">Start tracking free →</a>
       <a class="btn btn-ghost btn-lg" href="#how">See how it works</a>
     </div>
     <div class="hero-note">No bank credentials, ever. No credit card required.</div>
@@ -280,34 +312,6 @@
   </div>
 </section>
 
-<section class="section" id="install">
-  <div class="wrap">
-    <div class="section-eyebrow">Get it on your phone</div>
-    <h2 class="section-title">Add Tally to your home screen.</h2>
-    <p class="section-sub">Tally works right in your browser — no app store needed. Add it to your home screen once, and it opens and feels just like any other app on your phone.</p>
-    <div style="display:grid; grid-template-columns:repeat(2,1fr); gap:28px;">
-      <div class="feature-card">
-        <h3 style="margin-bottom:18px;">📱 iPhone (Safari)</h3>
-        <ol style="margin:0; padding-left:20px; font-size:14.5px; line-height:1.9; color:var(--muted);">
-          <li>Open <strong style="color:var(--cream);">letstally.app</strong> in Safari</li>
-          <li>Tap the <strong style="color:var(--cream);">Share</strong> icon (the square with an arrow pointing up)</li>
-          <li>Scroll down and tap <strong style="color:var(--cream);">"Add to Home Screen"</strong></li>
-          <li>Tap <strong style="color:var(--cream);">"Add"</strong> in the top corner</li>
-        </ol>
-      </div>
-      <div class="feature-card">
-        <h3 style="margin-bottom:18px;">🤖 Android (Chrome)</h3>
-        <ol style="margin:0; padding-left:20px; font-size:14.5px; line-height:1.9; color:var(--muted);">
-          <li>Open <strong style="color:var(--cream);">letstally.app</strong> in Chrome</li>
-          <li>Tap the <strong style="color:var(--cream);">⋮</strong> menu (top right corner)</li>
-          <li>Tap <strong style="color:var(--cream);">"Add to Home screen"</strong> or <strong style="color:var(--cream);">"Install app"</strong></li>
-          <li>Confirm by tapping <strong style="color:var(--cream);">"Add"</strong> or <strong style="color:var(--cream);">"Install"</strong></li>
-        </ol>
-      </div>
-    </div>
-  </div>
-</section>
-
 <section class="section section-alt">
   <div class="wrap">
     <div class="privacy-band">
@@ -329,7 +333,7 @@
   <div class="wrap">
     <h2>Ready to actually know where your money goes?</h2>
     <p>Free to use. No bank login required. Set up in under a minute.</p>
-    <a class="btn btn-gold btn-lg" href="https://mywallet-liart.vercel.app" target="_blank" rel="noopener">Start tracking free →</a>
+    <a class="btn btn-gold btn-lg" href="https://app.letstally.app" target="_blank" rel="noopener">Start tracking free →</a>
   </div>
 </section>
 
