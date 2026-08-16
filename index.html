@@ -178,13 +178,7 @@
   .step h3{ font-family:'Fraunces',serif; font-size:19px; font-weight:600; margin:0 0 10px; }
   .step p{ font-size:14.5px; color:var(--muted); line-height:1.6; margin:0; }
 
-  /* ---------- Privacy band ---------- */
-  .privacy-band{
-    background:var(--panel); border:1px solid var(--line); border-radius:18px; padding:56px 48px;
-    display:grid; grid-template-columns:1.1fr 1fr; gap:40px; align-items:center;
-  }
-  .privacy-band h2{ font-family:'Fraunces',serif; font-size:clamp(24px,3vw,32px); font-weight:600; margin:0 0 16px; line-height:1.25; }
-  .privacy-band p{ font-size:15px; color:var(--muted); line-height:1.7; margin:0; }
+  /* ---------- Privacy list (reused under Why Tally) ---------- */
   .privacy-list{ list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:16px; }
   .privacy-list li{ display:flex; gap:14px; align-items:flex-start; font-size:14.5px; line-height:1.5; }
   .privacy-check{ color:var(--mint); font-family:'IBM Plex Mono',monospace; font-weight:600; flex-shrink:0; }
@@ -212,7 +206,6 @@
     .steps{ grid-template-columns:1fr; gap:44px; }
     .showcase-row, .showcase-row.reverse{ grid-template-columns:1fr; }
     .showcase-row.reverse .showcase-text, .showcase-row.reverse .showcase-img{ order:initial; }
-    .privacy-band{ grid-template-columns:1fr; padding:36px 26px; }
     .pricing-grid{ grid-template-columns:1fr; max-width:400px; }
     .hero{ padding:70px 20px 60px; }
     .section{ padding:64px 20px; }
@@ -320,6 +313,10 @@
         <p>Your bank login never leaves your device, and nobody, not even us, can see your data. Not because we promise not to look, but because the system itself won't let us.</p>
       </div>
     </div>
+    <ul class="privacy-list" style="margin-top:36px; max-width:640px;">
+      <li><span class="privacy-check">✓</span> Receipt photos are read once, then discarded, never saved</li>
+      <li><span class="privacy-check">✓</span> You can download your transactions or delete everything, anytime</li>
+    </ul>
   </div>
 </section>
 
@@ -373,23 +370,6 @@
         <h3>Watch your Dashboard come alive</h3>
         <p>Your balance, your top spending category, and your budget health, all in one place, updated instantly.</p>
       </div>
-    </div>
-  </div>
-</section>
-
-<section class="section section-alt">
-  <div class="wrap">
-    <div class="privacy-band">
-      <div>
-        <h2>Privacy isn't a settings toggle here.</h2>
-        <p>Most apps promise not to look at your data. Tally is built so that promise doesn't have to be trusted. It's enforced by the database itself, the same way a bank vault doesn't rely on the teller's good intentions.</p>
-      </div>
-      <ul class="privacy-list">
-        <li><span class="privacy-check">✓</span> No other user can ever see your data. That's enforced by the database itself, not just a policy</li>
-        <li><span class="privacy-check">✓</span> No bank login is ever requested or stored</li>
-        <li><span class="privacy-check">✓</span> Receipt photos are read once, then discarded, never saved</li>
-        <li><span class="privacy-check">✓</span> You can download your transactions or delete everything, anytime</li>
-      </ul>
     </div>
   </div>
 </section>
