@@ -217,7 +217,7 @@
     <div class="brand">Tally<span>.</span></div>
     <div style="display:flex; gap:10px; align-items:center;">
       <button class="btn" id="install-btn" style="background:none; border:1px solid rgba(242,236,221,0.2); color:var(--cream); cursor:pointer;" onclick="document.getElementById('install-modal').style.display='flex';">How to install</button>
-      <a class="btn" href="#pricing" style="background:none; border:1px solid rgba(242,236,221,0.2); color:var(--cream);">Pricing</a>
+      <a class="btn" href="#pricing" onclick="event.preventDefault(); document.getElementById('pricing-modal').style.display='flex';" style="background:none; border:1px solid rgba(242,236,221,0.2); color:var(--cream); cursor:pointer;">Pricing</a>
       <a class="btn btn-gold" href="https://app.letstally.app" target="_blank" rel="noopener">Try it free</a>
     </div>
   </div>
@@ -255,6 +255,53 @@
         <strong style="color:var(--cream);">On Android</strong>, once Tally's installed, just take a photo of a receipt in your regular camera or Photos app, tap <strong style="color:var(--cream);">Share</strong>, and pick Tally: it scans and logs it instantly, no need to open the app first.<br><br>
         <strong style="color:var(--cream);">On iPhone</strong>, a similar shortcut is available through the Shortcuts app. After you sign up, head to <strong style="color:var(--cream);">Settings</strong> inside Tally for the full setup steps.
       </p>
+    </div>
+  </div>
+</div>
+
+<div id="pricing-modal" style="display:none; position:fixed; inset:0; background:rgba(15,42,44,0.85); z-index:1000; align-items:center; justify-content:center; padding:20px;" onclick="if(event.target===this) this.style.display='none';">
+  <div style="background:var(--panel, #163A3C); border:1px solid rgba(242,236,221,0.15); border-radius:14px; padding:32px; max-width:680px; width:100%; max-height:85vh; overflow-y:auto; position:relative;">
+    <button onclick="document.getElementById('pricing-modal').style.display='none';" style="position:absolute; top:16px; right:16px; background:none; border:none; color:var(--muted); font-size:22px; cursor:pointer; line-height:1;">×</button>
+    <div class="section-eyebrow">Pricing</div>
+    <h2 class="section-title" style="font-size:24px; margin-bottom:12px;">Start free. Upgrade only if you actually need to.</h2>
+    <p class="section-sub" style="margin-bottom:24px;">No credit card to sign up. No trial that quietly starts charging you.</p>
+
+    <div class="pricing-toggle" id="pricing-toggle">
+      <button class="active" id="btn-toggle-monthly" onclick="setPricingPeriod('monthly')">Monthly</button>
+      <button id="btn-toggle-annual" onclick="setPricingPeriod('annual')">Annual <span class="save-badge">Save 25%</span></button>
+    </div>
+
+    <div class="pricing-grid">
+      <div class="pricing-card">
+        <h3>Free</h3>
+        <div class="pricing-amount">$0</div>
+        <div class="pricing-note">&nbsp;</div>
+        <ul class="pricing-features">
+          <li>Unlimited manual expense entry</li>
+          <li>10 receipt scans a month</li>
+          <li>Up to 3 custom categories</li>
+          <li>Split bills with up to 2 friends</li>
+          <li>Current month's transaction history</li>
+          <li>Budgets, Cash Flow, and Notes included</li>
+        </ul>
+        <a class="btn btn-ghost" href="https://app.letstally.app" target="_blank" rel="noopener" style="width:100%; justify-content:center;">Start free</a>
+      </div>
+
+      <div class="pricing-card featured">
+        <div class="pricing-badge">Most popular</div>
+        <h3>Tally Plus</h3>
+        <div class="pricing-amount" id="pricing-amount-display">$3.99<span>/month</span></div>
+        <div class="pricing-note" id="pricing-note-display">&nbsp;</div>
+        <ul class="pricing-features">
+          <li>Everything in Free, plus:</li>
+          <li>Unlimited receipt scans</li>
+          <li>Import bank statements (CSV, PDF, screenshots)</li>
+          <li>Full transaction history, forever</li>
+          <li>Unlimited custom categories</li>
+          <li>Unlimited friends for splitting bills</li>
+        </ul>
+        <a class="btn btn-gold" href="https://app.letstally.app" target="_blank" rel="noopener" style="width:100%; justify-content:center;">Start free</a>
+      </div>
     </div>
   </div>
 </div>
@@ -360,52 +407,6 @@
         <div class="step-num">03</div>
         <h3>Watch your Dashboard come alive</h3>
         <p>Your balance, your top spending category, and your budget health, all in one place, updated instantly.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section" id="pricing">
-  <div class="wrap">
-    <div class="section-eyebrow">Pricing</div>
-    <h2 class="section-title">Start free. Upgrade only if you actually need to.</h2>
-    <p class="section-sub">No credit card to sign up. No trial that quietly starts charging you.</p>
-
-    <div class="pricing-toggle" id="pricing-toggle">
-      <button class="active" id="btn-toggle-monthly" onclick="setPricingPeriod('monthly')">Monthly</button>
-      <button id="btn-toggle-annual" onclick="setPricingPeriod('annual')">Annual <span class="save-badge">Save 25%</span></button>
-    </div>
-
-    <div class="pricing-grid">
-      <div class="pricing-card">
-        <h3>Free</h3>
-        <div class="pricing-amount">$0</div>
-        <div class="pricing-note">&nbsp;</div>
-        <ul class="pricing-features">
-          <li>Unlimited manual expense entry</li>
-          <li>10 receipt scans a month</li>
-          <li>Up to 3 custom categories</li>
-          <li>Split bills with up to 2 friends</li>
-          <li>Current month's transaction history</li>
-          <li>Budgets, Cash Flow, and Notes included</li>
-        </ul>
-        <a class="btn btn-ghost" href="https://app.letstally.app" target="_blank" rel="noopener" style="width:100%; justify-content:center;">Start free</a>
-      </div>
-
-      <div class="pricing-card featured">
-        <div class="pricing-badge">Most popular</div>
-        <h3>Tally Plus</h3>
-        <div class="pricing-amount" id="pricing-amount-display">$3.99<span>/month</span></div>
-        <div class="pricing-note" id="pricing-note-display">&nbsp;</div>
-        <ul class="pricing-features">
-          <li>Everything in Free, plus:</li>
-          <li>Unlimited receipt scans</li>
-          <li>Import bank statements (CSV, PDF, screenshots)</li>
-          <li>Full transaction history, forever</li>
-          <li>Unlimited custom categories</li>
-          <li>Unlimited friends for splitting bills</li>
-        </ul>
-        <a class="btn btn-gold" href="https://app.letstally.app" target="_blank" rel="noopener" style="width:100%; justify-content:center;">Start free</a>
       </div>
     </div>
   </div>
