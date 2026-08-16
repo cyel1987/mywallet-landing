@@ -229,6 +229,7 @@
     <div class="brand">Tally<span>.</span></div>
     <div style="display:flex; gap:10px; align-items:center;">
       <button class="btn" id="install-btn" style="background:none; border:1px solid rgba(242,236,221,0.2); color:var(--cream); cursor:pointer;" onclick="document.getElementById('install-modal').style.display='flex';">How to install</button>
+      <a class="btn" href="#pricing" style="background:none; border:1px solid rgba(242,236,221,0.2); color:var(--cream);">Pricing</a>
       <a class="btn btn-gold" href="https://app.letstally.app" target="_blank" rel="noopener">Try it free</a>
     </div>
   </div>
@@ -401,7 +402,7 @@
 
     <div class="pricing-toggle" id="pricing-toggle">
       <button class="active" id="btn-toggle-monthly" onclick="setPricingPeriod('monthly')">Monthly</button>
-      <button id="btn-toggle-annual" onclick="setPricingPeriod('annual')">Annual <span class="save-badge">Save 33%</span></button>
+      <button id="btn-toggle-annual" onclick="setPricingPeriod('annual')">Annual <span class="save-badge">Save 25%</span></button>
     </div>
 
     <div class="pricing-grid">
@@ -423,7 +424,7 @@
       <div class="pricing-card featured">
         <div class="pricing-badge">Most popular</div>
         <h3>Tally Plus</h3>
-        <div class="pricing-amount" id="pricing-amount-display">$2.99<span>/month</span></div>
+        <div class="pricing-amount" id="pricing-amount-display">$3.99<span>/month</span></div>
         <div class="pricing-note" id="pricing-note-display">&nbsp;</div>
         <ul class="pricing-features">
           <li>Everything in Free, plus:</li>
@@ -467,12 +468,12 @@ function setPricingPeriod(period){
   if(period === 'annual'){
     monthlyBtn.classList.remove('active');
     annualBtn.classList.add('active');
-    amountDisplay.innerHTML = '$23.99<span>/year</span>';
-    noteDisplay.textContent = 'Works out to $2/month';
+    amountDisplay.innerHTML = '$35.88<span>/year</span>';
+    noteDisplay.textContent = 'Works out to $2.99/month';
   } else {
     monthlyBtn.classList.add('active');
     annualBtn.classList.remove('active');
-    amountDisplay.innerHTML = '$2.99<span>/month</span>';
+    amountDisplay.innerHTML = '$3.99<span>/month</span>';
     noteDisplay.innerHTML = '&nbsp;';
   }
 }
