@@ -82,10 +82,24 @@
     margin-top:70px; display:flex; justify-content:center;
   }
   .hero-shot-frame{
-    border:1px solid var(--line); border-radius:16px; overflow:hidden; max-width:780px;
+    border:1px solid var(--line); border-radius:16px; overflow:hidden; max-width:420px;
     box-shadow:0 30px 80px rgba(0,0,0,0.45); transform:rotate(-1.2deg);
+    position:relative;
   }
-  .hero-shot-frame img{ display:block; width:100%; }
+  .hero-shot-frame img, .hero-shot-frame video{ display:block; width:100%; }
+  .hero-mute-btn{
+    position:absolute; bottom:16px; right:16px;
+    width:44px; height:44px; border-radius:50%;
+    background:rgba(15,42,44,0.75); border:1.5px solid rgba(232,180,92,0.6);
+    display:flex; align-items:center; justify-content:center;
+    cursor:pointer; transition:background 0.15s, transform 0.15s;
+  }
+  .hero-mute-btn:hover{ background:rgba(15,42,44,0.9); transform:scale(1.06); }
+  .hero-mute-btn svg{ width:20px; height:20px; fill:none; stroke:var(--gold); stroke-width:2; }
+  .hero-mute-btn .icon-muted{ display:block; }
+  .hero-mute-btn .icon-unmuted{ display:none; }
+  .hero-shot-frame.unmuted .hero-mute-btn .icon-muted{ display:none; }
+  .hero-shot-frame.unmuted .hero-mute-btn .icon-unmuted{ display:block; }
 
   /* ---------- Section shared ---------- */
   .section{ padding:100px 24px; }
@@ -233,8 +247,12 @@
     <div class="hero-note">No bank credentials, ever. No credit card required.</div>
 
     <div class="hero-shot">
-      <div class="hero-shot-frame">
-        <img src="images/shot-transactions.jpg" alt="Tally transactions list on a phone, showing categorized expenses like groceries, transport, and entertainment">
+      <div class="hero-shot-frame" id="hero-video-frame">
+        <video id="hero-video" src="videos/hero-demo.mp4" poster="images/hero-demo-poster.jpg" autoplay muted loop playsinline></video>
+        <div class="hero-mute-btn" onclick="const v=document.getElementById('hero-video'); v.muted=!v.muted; document.getElementById('hero-video-frame').classList.toggle('unmuted', !v.muted);">
+          <svg class="icon-muted" viewBox="0 0 24 24"><path d="M11 5 6 9H2v6h4l5 4V5z"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg>
+          <svg class="icon-unmuted" viewBox="0 0 24 24"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
+        </div>
       </div>
     </div>
   </div>
