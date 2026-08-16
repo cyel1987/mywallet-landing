@@ -125,6 +125,37 @@
   .feature-card h3{ font-family:'Fraunces',serif; font-size:20px; font-weight:600; margin:0 0 12px; }
   .feature-card p{ font-size:14.5px; line-height:1.65; color:var(--muted); margin:0; }
 
+  /* ---------- Pricing ---------- */
+  .pricing-toggle{
+    display:inline-flex; align-items:center; gap:4px; background:var(--panel); border:1px solid var(--line);
+    border-radius:999px; padding:4px; margin-bottom:44px;
+  }
+  .pricing-toggle button{
+    font-family:'IBM Plex Mono',monospace; font-size:13px; padding:9px 20px; border-radius:999px; border:none;
+    background:none; color:var(--muted); cursor:pointer; transition:background 0.15s, color 0.15s;
+  }
+  .pricing-toggle button.active{ background:var(--gold); color:var(--ink); }
+  .pricing-toggle .save-badge{
+    font-family:'IBM Plex Mono',monospace; font-size:10.5px; color:var(--gold); margin-left:6px;
+  }
+  .pricing-grid{ display:grid; grid-template-columns:1fr 1fr; gap:28px; max-width:780px; }
+  .pricing-card{
+    background:var(--panel); border:1px solid var(--line); border-radius:16px; padding:36px 32px;
+  }
+  .pricing-card.featured{ border-color:var(--gold); position:relative; }
+  .pricing-badge{
+    position:absolute; top:-13px; left:32px; background:var(--gold); color:var(--ink);
+    font-family:'IBM Plex Mono',monospace; font-size:11px; font-weight:700; letter-spacing:0.05em;
+    padding:4px 12px; border-radius:999px; text-transform:uppercase;
+  }
+  .pricing-card h3{ font-family:'Fraunces',serif; font-size:22px; font-weight:600; margin:0 0 6px; }
+  .pricing-amount{ font-family:'Fraunces',serif; font-size:42px; font-weight:700; margin:14px 0 4px; }
+  .pricing-amount span{ font-family:'IBM Plex Mono',monospace; font-size:14px; font-weight:400; color:var(--muted); }
+  .pricing-note{ font-family:'IBM Plex Mono',monospace; font-size:12px; color:var(--gold); min-height:16px; margin-bottom:20px; }
+  .pricing-features{ list-style:none; padding:0; margin:0 0 28px; }
+  .pricing-features li{ font-size:14.5px; color:var(--muted); line-height:1.7; padding-left:22px; position:relative; }
+  .pricing-features li::before{ content:'✓'; position:absolute; left:0; color:var(--gold); font-weight:700; }
+
   /* ---------- Screenshot showcase ---------- */
   .showcase{ display:flex; flex-direction:column; gap:90px; }
   .showcase-row{ display:grid; grid-template-columns:1fr 1fr; gap:56px; align-items:center; }
@@ -182,6 +213,7 @@
     .showcase-row, .showcase-row.reverse{ grid-template-columns:1fr; }
     .showcase-row.reverse .showcase-text, .showcase-row.reverse .showcase-img{ order:initial; }
     .privacy-band{ grid-template-columns:1fr; padding:36px 26px; }
+    .pricing-grid{ grid-template-columns:1fr; max-width:400px; }
     .hero{ padding:70px 20px 60px; }
     .section{ padding:64px 20px; }
     .hero-flex{ flex-direction:column; gap:0; }
@@ -361,6 +393,52 @@
   </div>
 </section>
 
+<section class="section" id="pricing">
+  <div class="wrap">
+    <div class="section-eyebrow">Pricing</div>
+    <h2 class="section-title">Start free. Upgrade only if you actually need to.</h2>
+    <p class="section-sub">No credit card to sign up. No trial that quietly starts charging you.</p>
+
+    <div class="pricing-toggle" id="pricing-toggle">
+      <button class="active" id="btn-toggle-monthly" onclick="setPricingPeriod('monthly')">Monthly</button>
+      <button id="btn-toggle-annual" onclick="setPricingPeriod('annual')">Annual <span class="save-badge">Save 33%</span></button>
+    </div>
+
+    <div class="pricing-grid">
+      <div class="pricing-card">
+        <h3>Free</h3>
+        <div class="pricing-amount">$0</div>
+        <div class="pricing-note">&nbsp;</div>
+        <ul class="pricing-features">
+          <li>Unlimited manual expense entry</li>
+          <li>10 receipt scans a month</li>
+          <li>Up to 3 custom categories</li>
+          <li>Split bills with up to 2 friends</li>
+          <li>Current month's transaction history</li>
+          <li>Budgets, Cash Flow, and Notes included</li>
+        </ul>
+        <a class="btn btn-ghost" href="https://app.letstally.app" target="_blank" rel="noopener" style="width:100%; justify-content:center;">Start free</a>
+      </div>
+
+      <div class="pricing-card featured">
+        <div class="pricing-badge">Most popular</div>
+        <h3>Tally Plus</h3>
+        <div class="pricing-amount" id="pricing-amount-display">$2.99<span>/month</span></div>
+        <div class="pricing-note" id="pricing-note-display">&nbsp;</div>
+        <ul class="pricing-features">
+          <li>Everything in Free, plus:</li>
+          <li>Unlimited receipt scans</li>
+          <li>Import bank statements (CSV, PDF, screenshots)</li>
+          <li>Full transaction history, forever</li>
+          <li>Unlimited custom categories</li>
+          <li>Unlimited friends for splitting bills</li>
+        </ul>
+        <a class="btn btn-gold" href="https://app.letstally.app" target="_blank" rel="noopener" style="width:100%; justify-content:center;">Start free</a>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="final-cta">
   <div class="wrap">
     <h2>Ready to actually know where your money goes?</h2>
@@ -380,5 +458,24 @@
   </div>
 </footer>
 
+<script>
+function setPricingPeriod(period){
+  const monthlyBtn = document.getElementById('btn-toggle-monthly');
+  const annualBtn = document.getElementById('btn-toggle-annual');
+  const amountDisplay = document.getElementById('pricing-amount-display');
+  const noteDisplay = document.getElementById('pricing-note-display');
+  if(period === 'annual'){
+    monthlyBtn.classList.remove('active');
+    annualBtn.classList.add('active');
+    amountDisplay.innerHTML = '$23.99<span>/year</span>';
+    noteDisplay.textContent = 'Works out to $2/month';
+  } else {
+    monthlyBtn.classList.add('active');
+    annualBtn.classList.remove('active');
+    amountDisplay.innerHTML = '$2.99<span>/month</span>';
+    noteDisplay.innerHTML = '&nbsp;';
+  }
+}
+</script>
 </body>
 </html>
